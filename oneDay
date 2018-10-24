@@ -1,0 +1,11 @@
+命令行：
+更换用户：sudo - root(角色的名字)
+获取权限：sudo -s 
+更换root密码：系统偏好设置 用户与群组 点击左下角🔒 使其处于解锁状态 🔓 选中需要更换的用户 点击左下角的登陆选项 
+点击右侧 网络账户服务器：加入 点击打开目录实用工具 点击左下角解锁 点击桌面左上角的编辑 更改root密码
+
+苹果上是没有svn的 
+类似于svn的工具：cornerstone 免费破解的软件 链接: https://pan.baidu.com/s/18XGGb31279JsYsvW7eJQlQ 提取码: 4fn7
+add远程仓库到本地的时候：选中http服务器将地址放入即可 需要注意的是 不需要映射之后的地址 需要比如https://192.168.1.1:443/svn/youCodeAddress
+
+vscode 编码工具：汉化 打开软件 按住 command+shift+p 在工具里面搜 chineseLanague
