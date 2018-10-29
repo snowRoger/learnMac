@@ -1,0 +1,1 @@
+禁用浏览器跨域限制： open -n /Applications/Google\ Chrome.app/ --args --disable-web-security  --user-data-dir=/Users/mac/documents/MyChromeDevUserData/
