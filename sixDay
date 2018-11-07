@@ -1,0 +1,8 @@
+/**这里显示数字分隔符**/
+  if($(j).hasClass("decimals")){
+     l = c.formatterO.call(j, m, c);
+     l = l.toString().replace(/(\d)(?=(\d{3})+\.)/g, '$1,');//浮点数转千分位
+  }else{
+     l = c.formatter.call(j, m, c);
+     l = l.toString().replace(/\d{1,3}(?=(\d{3})+$)/g,function(s){return s+','});//整形转千分位
+  }
