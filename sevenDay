@@ -1,0 +1,41 @@
+// 时间标线轴的拖动事件
+  function BlockDrag(divId,callback){
+      var div=document.getElementById(divId);
+      // l鼠标距左偏移量，t时间标线的宽度，r放宽度24等分距离的数组
+      var l,t=$(".time_drag").width(),r=[];
+      for(var i = 0;i<25;i++){
+          r.push(Math.floor(t/24)*i)
+      }
+      div.onmousedown=function(e){
+          var e=e||event;
+          var disX=e.clientX-div.offsetLeft;
+          div.style.position='absolute';
+          // d指针上显示的时间,
+          var d = $(".thumb-time");
+          document.onmousemove=function(e){
+              var e=e||event;
+              l=e.clientX-disX;
+              // 超出边界return
+              if(l < 0 || l >t){return}
+              // 取第几个间隔
+              var o = Math.round(l*24/t);
+              // 设置偏移量
+              div.style.left=r[o]+'px';
+              d.html(o<10 ? "0"+o+":00" : o + ":00");
+              console.log(l +"-"+o+"."+r[o])
+          };
+          document.onmouseup=function(){
+              document.onmouseup=null;
+              document.onmousemove=null;
+              if(typeof callback=='function'){
+                  if(l!==undefined&&t!==undefined){
+                      callback(l,t);
+                  }
+
+              }
+          };
+      };
+  }
+  BlockDrag("lll",function (argument) {
+      console.log("你最终还是放ta离开了...")
+  });
